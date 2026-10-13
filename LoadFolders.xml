@@ -567,6 +567,7 @@
 		<li IfModActive="Ryflamer.Rimcraft.Metals,zal.RimcraftMetals">ModPatches/Rimcraft Metals</li>
 		<li IfModActive="Ryflamer.Rimcraft.Scenarios">ModPatches/Rimcraft Scenario</li>
 		<li IfModActive="Ryflamer.Rimcraft.Weaponry,mlie.ryrimcraftweaponry">ModPatches/Rimcraft Weaponry</li>
+		<li IfModActive="phonicmas.rimdark.mankindsfinest">ModPatches/RimDark 40k - Mankinds Finest</li>
 		<li IfModActive="Ogam.Rimedieval.Royalty">ModPatches/Rimedieval - Medieval Royalty</li>
 		<li IfModActive="Dubwise.Rimefeller">ModPatches/Rimefeller</li>
 		<li IfModActive="CP.RimmuNation.Clothing">ModPatches/Rimmu-Nation - Clothing</li>
