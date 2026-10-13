@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      HAS_DO_KEY: ${{ secrets.ID_ECDSA != '' }}
 
     steps:
     - uses: actions/checkout@v3
@@ -36,7 +38,13 @@ jobs:
         mkdir CombatExtended
         cp -r Source/ Assemblies/ About/ Defs/ Languages/ Patches/ Royalty/ Ideology/ Biotech/ Anomaly/ Odyssey/ Sounds/ Textures/ ModPatches/ LoadFolders.xml README.md SupportedThirdPartyMods.md CombatExtended
         zip -9 -r build.zip CombatExtended
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: CombatExtended-${{ github.sha }}
+        path: build.zip
     - name: Upload to DO
+      if: ${{ env.HAS_DO_KEY == 'true' }}
       run: |
         printf "%s" "$SSH_KEY" > id_ecdsa
         echo "$SSH_KEY_PUB" > id_ecdsa.pub
